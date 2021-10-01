@@ -63,7 +63,6 @@ class Table:
                    self.e.insert(tk.END, lst[i][j])
                    self.e.configure(state='readonly')
                 self.e.insert(tk.END, lst[i][j])
-                print(text.get())
                 values.append(text)
         self.btn = tk.Button(root,width=20,text="Submit",relief=SUNKEN,background="tomato",foreground="white",command=submit)
         self.btn.grid(row=total_rows+1,column=2)
@@ -102,7 +101,6 @@ def refresh():
     t=Table(window)
 
 def submit():
-    print("entered!")
     global values_w
     global total_rows
     global total_columns
@@ -111,22 +109,17 @@ def submit():
       for j in range(total_columns):
           if j > 0 and i > 0:
                if values_w[i][j].get() != "":
-                   print("Sss")
                    if values_w[i][j].get().lower().replace(" ","") == correct_values[i-1][j-1].lower().replace(" ",""):
                        pass
                    else:
-                       print("s")
                        text.configure(text="Some of the values are incorrect",foreground="red")
                        not_correct = True
                        return
                else:
-                   print("fill in!")
                    text.configure(text="Please Fill all the values",foreground="red")
                    not_correct = True
                    return
-    print(not_correct)
     if not not_correct: 
-                print("correct!")
                 text.configure(text="Every Value is Correct!",foreground="green")
                 refresh()  
 
