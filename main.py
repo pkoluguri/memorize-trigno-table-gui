@@ -78,7 +78,7 @@ def set_fill_lst():
     lst.append(('tan',tan0,tan30,tan45,tan60,tan90))
     lst.append(('cosec',cosec0,cosec30,cosec45,cosec60,cosec90))
     lst.append(('sec',sec0,sec30,sec45,sec60,sec90))
-    lst.append(('cot',tan0,tan30,tan45,tan60,tan90))
+    lst.append(('cot',cot0,cot30,cot45,cot60,cot90))
     return lst
 
 def fill_all():
